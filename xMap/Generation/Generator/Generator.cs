@@ -37,7 +37,7 @@ public class Generator : GeneratorBase
     private static bool IsSyntaxTarget(SyntaxNode node)
     {
         return node is ClassDeclarationSyntax cds
-               && cds.Modifiers.Any(SyntaxKind.StaticKeyword);
+               && cds.Modifiers.Any(SyntaxKind.AbstractKeyword);
     }
 
     private static T? GetSemanticTarget<T>(GeneratorSyntaxContext context) where T : class
