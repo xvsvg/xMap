@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xMap.Sample", "xMap.Sample\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xMap.Tests", "xMap.Tests\xMap.Tests.csproj", "{C1D14709-BEF7-40C0-995C-D1B3CFE61021}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xMap.Annotations", "xMap.Annotations\xMap.Annotations.csproj", "{B22F0229-36BE-462D-9AD8-556B69204D32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C1D14709-BEF7-40C0-995C-D1B3CFE61021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1D14709-BEF7-40C0-995C-D1B3CFE61021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1D14709-BEF7-40C0-995C-D1B3CFE61021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B22F0229-36BE-462D-9AD8-556B69204D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22F0229-36BE-462D-9AD8-556B69204D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22F0229-36BE-462D-9AD8-556B69204D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22F0229-36BE-462D-9AD8-556B69204D32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
