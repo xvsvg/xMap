@@ -1,7 +1,9 @@
-﻿using xMap.Annotations;
+﻿using xMap.MapperGenerators;
 using xMap.Sample.Tools;
 
+namespace xMap.Sample;
+
 [Mapper(typeof(Entity), typeof(Dto))]
-public abstract class Receiver
+public partial class Receiver
 {
 }

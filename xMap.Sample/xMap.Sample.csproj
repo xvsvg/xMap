@@ -2,13 +2,15 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+        <EnableSourceGenerator>true</EnableSourceGenerator>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\xMap.Tests\xMap.Tests.csproj"/>
-        <ProjectReference Include="..\xMap\xMap.csproj"/>
+        <ProjectReference Include="..\xMap.Annotations\xMap.Annotations.csproj" OutputItemType="Analyzer"/>
+        <ProjectReference Include="..\xMap\xMap.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 </Project>
