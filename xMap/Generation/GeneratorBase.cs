@@ -13,7 +13,7 @@ public abstract class GeneratorBase : IIncrementalGenerator
 
     protected void Execute(
         Compilation compilation,
-        ImmutableArray<ClassDeclarationSyntax?> classes,
+        ImmutableArray<ClassDeclarationSyntax> classes,
         SourceProductionContext context)
     {
         context.CancellationToken.ThrowIfCancellationRequested();
@@ -24,6 +24,8 @@ public abstract class GeneratorBase : IIncrementalGenerator
         foreach (var syntaxTree in compilation.SyntaxTrees)
         {
             var semanticModel = compilation.GetSemanticModel(syntaxTree);
+            // if (semanticModel is null)
+                // return;
             Chain.Process(context, semanticModel);
         }
     }
