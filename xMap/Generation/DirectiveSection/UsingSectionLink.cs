@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -23,6 +24,12 @@ internal class UsingSectionLink : ILink
         var usingDirectives = uniqueNamespaces
             .Select(ns => UsingDirective(ParseName(ns))).ToList();
 
+        var firstNamespaceType = root.ChildNodes()
+            .OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
+
+        var secondNamespaceType =root.ChildNodes()
+            .OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
+        
         // var attributes = classDeclaration.AttributeLists.First().Attributes;
         //
         // var references = new List<Assembly>();
@@ -42,7 +49,8 @@ internal class UsingSectionLink : ILink
             .WithMembers(
                 SingletonList<MemberDeclarationSyntax>(
                     NamespaceDeclaration(
-                            IdentifierName("xMap"))
+                            IdentifierName(firstNamespaceType?.Name.GetText(Encoding.UTF8).ToString() ??
+                                           secondNamespaceType!.Name.GetText(Encoding.UTF8).ToString()))
                         .WithCloseBraceToken(
                             MissingToken(SyntaxKind.CloseBraceToken))))
             .NormalizeWhitespace();
